@@ -41,12 +41,12 @@ var  mapa  =
 
 } ;
 
-mapa . imagen  =  nueva  imagen ( ) ;
+mapa . imagen  =  new  imagen ( ) ;
 mapa . imagen . src  =  mapa . url ;
 mapa . imagen . addEventListener ( "cargar" ,  cargarMapa ) ;
 
 
-función  cargarMapa  ( )
+function  cargarMapa  ( )
 {
     mapa . cargaOK  =  verdadero ;
     dibujar ( ) ;
@@ -62,7 +62,7 @@ var  vaca  =
     cargaOK : falso
 } ;
 
-vaca . animal  =  nueva  imagen ( ) ;
+vaca . animal  =  new  imagen ( ) ;
 vaca . animal . src  =  vaca . url ;
 vaca . animal . addEventListener ( "cargar" ,  cargarVaca ) ;
 
@@ -72,7 +72,7 @@ var  pollo  =
     cargaOK : falso
 }
 
-pollo . animal  =  nueva  imagen ( ) ;
+pollo . animal  =  new  imagen ( ) ;
 pollo . animal . src  =  pollo . url ;
 pollo . animal . addEventListener ( "cargar" ,  cargarPollo ) ;
 
@@ -83,23 +83,23 @@ var  cerdo  =
     cargaOK : falso
 }
 
-cerdo . animal  =  nueva  imagen ( ) ;
+cerdo . animal  =  new  imagen ( ) ;
 cerdo . animal . src  =  cerdo . url ;
 cerdo . animal . addEventListener ( "cargar" ,  cargarCerdo ) ;
 
-función  cargarCerdo ( )
+function  cargarCerdo ( )
 {
     cerdo . cargaOK  =  verdadero ;
     dibujar ( ) ;
 } ;
 
-función  cargarVaca ( )
+function cargarVaca ( )
 {
     vaca . cargaOK  =  verdadero ;
     dibujar ( ) ;
 } ;
 
-función  cargarPollo ( )
+function  cargarPollo ( )
 {
     pollo . cargaOK  =  verdadero ;
     dibujar ( ) ;
@@ -107,20 +107,20 @@ función  cargarPollo ( )
 
 
 
-función  dibujar ( )
+function  dibujar ( )
 {
     consola . log ( dibujar )
 
-    si  ( mapa . cargaOK  ==  true )
+    if  ( mapa . cargaOK  ==  true )
     {
         papel . drawImage ( mapa . imagen , 0 ,  0 )
     } ;
 
-    si  ( vaca . cargaOK  ==  verdadero )
+    if ( vaca . cargaOK  ==  verdadero )
     {
         consola . log ( "cantidad de vacas =" ,  cantidad_Vacas )
 
-        para ( var  v  =  0 ;  v  <  cantidad_Vacas ;  v ++ ) {
+        for ( var  v  =  0 ;  v  <  cantidad_Vacas ;  v ++ ) {
 
         var  x  =  aleatorio ( 0 , 5 ) ;
         var  y  =  aleatorio ( 0 , 5 ) ;
@@ -148,7 +148,7 @@ función  dibujar ( )
     }
  } ;
 
-    si  ( cerdo . cargaOK  ==  verdadero )
+    if  ( cerdo . cargaOK  ==  verdadero )
     {
         papel . drawImage ( cerdo . animal ,  xPosition ,  yPosition ) ;
     } ;
