@@ -132,11 +132,11 @@ función  dibujar ( )
     }
 } ;
 
-    si  ( pollo . cargaOK  ==  true )
+    if  ( pollo . cargaOK  ==  true )
     {
         consola . log ( "pollos =" , cantidad_Pollos )
 
-        para ( var  p  =  0 ;  p  <  cantidad_Pollos ;  p ++ )
+        for ( var  p  =  0 ;  p  <  cantidad_Pollos ;  p ++ )
         {
             var  x  =  aleatorio ( 0 , 4 ) ;
             var  y  =  aleatorio ( 0 , 4 ) ;
@@ -162,30 +162,30 @@ función  dibujar ( )
 // movimiento
 documento . addEventListener ( "keydown" ,  moverCerdo ) ;
 
-función  moverCerdo ( evento )
+function  moverCerdo ( evento )
 {
     consola . log ( "funcion moverCerdo" )
     interruptor ( evento . keyCode )
 {
-    caso  teclas . DERECHO :
+    case  teclas . DERECHO :
     moverPig ( xPosition  ,  yPosition ) ;
     xPosition  =  xPosition  +  movimiento ;
     consola . log ( "derecha +" )
     romper ;
 
-    caso  teclas . IZQUIERDA :
+    case  teclas . IZQUIERDA :
         moverPig ( xPosition  ,  yPosition ) ;
         xPosition  =  xPosition  -  movimiento ;
         consola . log ( "izquierda" )
         romper ;
 
-    caso  teclas . ABAJO :
+    case  teclas . ABAJO :
         moverPig ( xPosition  ,  yPosition ) ;
         yPosition  =  yPosition  +  movimiento ;
         consola . log ( "Bajando" )
         romper ;
 
-    caso  teclas . ARRIBA :
+    case  teclas . ARRIBA :
         moverPig ( xPosition  ,  yPosition ) ;
         yPosition  =  yPosition  -  movimiento ;
         consola . log ( "Arriba" )
@@ -195,7 +195,7 @@ función  moverCerdo ( evento )
 
     
 
-función  moverPig  ( xPosition ,  yPosition )
+function  moverPig  ( xPosition ,  yPosition )
 {
     
 
@@ -213,14 +213,14 @@ función  moverPig  ( xPosition ,  yPosition )
 
 } ;
 
-función  dibujarRetornos ( )
+function  dibujarRetornos ()
 {
-    para ( var  p  =  0 ;  p  <=  cantidad_Pollos ;  p ++ )
+    for ( var  p  =  0 ;  p  <=  cantidad_Pollos ;  p ++ )
     {
         papel . drawImage ( pollo . animal ,  polloRetornoX [ p ] ,  polloRetornoY [ p ] )
     }
 
-    para (  var  v  =  0 ;  v  <=  cantidad_Vacas ;  v ++ )
+    for (  var  v  =  0 ;  v  <=  cantidad_Vacas ;  v ++ )
     {
         papel . drawImage ( vaca . animal ,  vacaRetornoX [ v ] ,  vacaRetornoY [ v ] )
     }
@@ -233,16 +233,16 @@ función  dibujarRetornos ( )
 
 
 
-función  aleatorio  ( maxi , min )
+function aleatorio  ( maxi , min )
 {
     var  resultado ;
     resultado  =  Matemáticas . piso ( Matemáticas . aleatorio ( ) * ( maxi  -  min  +  1 ) ) +  min ;
-    volver  resultado ;
+     volver =  resultado ;
 } ;
 
 boton . addEventListener ( "hacer clic" ,  dibujar ) ;
 
-/ * función dibujar2 ()
+ function dibujar2 ()
 {console.log (dibujar)
     if (mapa.cargaOK == true) {
         papel.drawImage (mapa.imagen, 0, 0)
@@ -255,4 +255,4 @@ boton . addEventListener ( "hacer clic" ,  dibujar ) ;
     if (cerdo.cargaOK == true) {
         papel.drawImage (cerdo.animal, c, d);
     }
-    removeEventListener ("clic", dibujar) * /
+    removeEventListener ("clic", dibujar)
